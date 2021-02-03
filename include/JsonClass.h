@@ -39,6 +39,21 @@ namespace json_struct {
 		bool puddleSublimationEnabled = true;
 
 	};
-	void to_json(json& j, const JsonTestToggles& t);
+	// Got Rid Of The More Controlled to_json Implementation For The Macro - Don't Believe I'd be doing anything more than serializing/deserializing	
+	NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(JsonTestToggles, modEnabled, debugEnabled, aridOptionEnabled, thirstEnabled,
+		dryWellsEnabled, flammableWoodEnabled, puddlesEnabled, puddleRunoffsEnabled,
+		puddleFreezeEnabled, puddleSublimationEnabled)
+
+}
+
+namespace json_macro_test
+{
+	struct MacroJson {
+		std::string baseNodeTitle{ "Default Explicit Node Base Name" };
+		int lineNumber{ 0 };
+		std::string nodeValue{ "Default Explicit Node Value" };
+	};
+
+	NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(MacroJson, baseNodeTitle, lineNumber, nodeValue)
 
 }

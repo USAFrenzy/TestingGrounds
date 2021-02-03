@@ -17,23 +17,5 @@ namespace json_functions {
 namespace json_struct {
 
 
-	void to_json(json& j, const JsonTestToggles& t)
-	{
-		j = json{
-		{"Toggle Options",
-		{
-			{"isAridOptionEnabled", t.aridOptionEnabled},
-			{"isDebugEnabled", t.debugEnabled},
-			{"isModEnabled", t.modEnabled},
-			{"isThirstIncreased", t.thirstEnabled},
-			{"isDryWells", t.dryWellsEnabled},
-			{"isFlammableWood", t.flammableWoodEnabled},
-			{"isPuddles", t.puddlesEnabled},
-			{"isPuddleRunoff", t.puddleRunoffsEnabled},
-			{"isPuddleFreeze", t.puddleFreezeEnabled},
-			{"isPuddleSublimation", t.puddleSublimationEnabled}
-		}
-		}
-		};
-	}
+
 }

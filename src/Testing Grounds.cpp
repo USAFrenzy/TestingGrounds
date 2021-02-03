@@ -15,7 +15,7 @@ int main()
 {
 
 	serenity::Logger Log("Generic Logger");
-	// separate Project altogether but yeah, that's way too wordy..
+	// separate Project altogether but yeah, that's way too wordy..Definitely Should Fix That Soon...
 	Log.Init("Generic Logger.txt", serenity::details::logger::LogOutput::all);
 	Log.Open();
 
@@ -59,25 +59,8 @@ int main()
 	Log.Log("New Line\n");
 	// explicit json object using a struct to set boolean values
 	json_struct::JsonTestToggles tog;
-	json togg = {
-		{"Toggle Options",
-		{
-			{"isAridOptionEnabled", tog.aridOptionEnabled},
-			{"isDebugEnabled", tog.debugEnabled},
-			{"isModEnabled", tog.modEnabled},
-			{"isThirstIncreased", tog.thirstEnabled},
-			{"isDryWells", tog.dryWellsEnabled},
-			{"isFlammableWood", tog.flammableWoodEnabled},
-			{"isPuddles", tog.puddlesEnabled},
-			{"isPuddleRunoff", tog.puddleRunoffsEnabled},
-			{"isPuddleFreeze", tog.puddleFreezeEnabled},
-			{"isPuddleSublimation", tog.puddleSublimationEnabled}
-		}
-		}
-	};
-	auto jsonStrtwo = json_functions::RandomJsonPrettyPrint(togg);
-	Log.Log("Second Json To String Casting Struct Values To Nodes:\n " + jsonStrtwo);
-	Log.Log("New Line\n");
+
+
 
 	// The Sake Of Ease Of This Implementation Is REAAALLLYY Tempting - Need To Mess Around A lot More =D
 	json jsonCustConvert = tog;
@@ -85,6 +68,24 @@ int main()
 	Log.Log("Third Json To String Where The Struct Is Directly Cast To Json Using to_json Implementation:\n " + jsonStrthree);
 	Log.Log("New Line\n");
 
+	// Not Sure About Nested Json Values, But This Makes Life Reeeaalllyy Easy Just Using Macros =D
+	Log.Log("\n\n");
+	json_macro_test::MacroJson macroJTest;
+	json macroJson = macroJTest;
+	auto jsonStr4 = json_functions::RandomJsonPrettyPrint(macroJson);
+	Log.Log("Fourth Test Json Using The Json Macros To Define The to_json Implementation:\n" + jsonStr4);
+
+	// I'm sure there's a way to combine the nested json values with the ease of using a macro based to/from_json
+	Log.Log("\n\n");
+	json combinedJsonTest =
+	{
+		{"Toggle Options", tog}
+	};
+	auto jsonStr5 = json_functions::RandomJsonPrettyPrint(combinedJsonTest);
+	Log.Log("Testing Some Combined Functionality Using The Nested Json & Macro Defined to_json:\n" + jsonStr5);
+	// What Do Ya Know!!?? The Above Works Like How I wanted though I've no idea if that's the api
+	// correct way to implement that type of use case?
+	
 
 	std::cout << std::endl;
 #endif
