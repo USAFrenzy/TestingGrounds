@@ -4,6 +4,8 @@
 #include "JsonClass.h"
 
 
+#include "Logger.h"
+
 
 // Simple Toggles For "Block Tests"
 #define PLUGIN_TEST 1
@@ -12,16 +14,20 @@
 int main()
 {
 
+	serenity::Logger Log("Generic Logger");
+	// separate Project altogether but yeah, that's way too wordy..
+	Log.Init("Generic Logger.txt", serenity::details::logger::LogOutput::all);
+	Log.Open();
 
 #if PLUGIN_TEST
 
-	std::cout << "############## Plugin Functions ##############" << std::endl;
+	Log.Log("############## Plugin Functions ##############");
 	Toggles togOption;
 	std::string togStr;
 	for (int i = 0; i <= static_cast<int>(Toggles::isUndefined); i++) {
 		togOption = static_cast<Toggles>(i);
 		togStr = TogOptionToStr(togOption);
-		std::cout << "Toggle Option To String: " << togStr << std::endl;
+		Log.Log("Toggle Option To String: " + togStr);
 	}
 
 	std::cout << std::endl;
@@ -29,7 +35,8 @@ int main()
 
 
 #if JSON_TEST
-	std::cout << "############## Json Functions ##############" << std::endl;
+
+	Log.Log("############## Json Functions ##############");
 
 	using json = nlohmann::json;
 
@@ -48,8 +55,8 @@ int main()
 	jsonTest["Toggle Options"]["isPuddleSublimation"] = true;
 	std::string jsonStr;
 	jsonStr = json_functions::RandomJsonPrettyPrint(jsonTest);
-	std::cout << "First Json To String Explicitly Casting Values To Nodes:\n" <<jsonStr << std::endl;
-
+	Log.Log("First Json To String Explicitly Casting Values To Nodes:\n" + jsonStr);
+	Log.Log("New Line\n");
 	// explicit json object using a struct to set boolean values
 	json_struct::JsonTestToggles tog;
 	json togg = {
@@ -69,12 +76,14 @@ int main()
 		}
 	};
 	auto jsonStrtwo = json_functions::RandomJsonPrettyPrint(togg);
-	std::cout << "Second Json To String Casting Struct Values To Nodes:\n " << jsonStrtwo << std::endl;
+	Log.Log("Second Json To String Casting Struct Values To Nodes:\n " + jsonStrtwo);
+	Log.Log("New Line\n");
 
 	// The Sake Of Ease Of This Implementation Is REAAALLLYY Tempting - Need To Mess Around A lot More =D
 	json jsonCustConvert = tog;
 	auto jsonStrthree = json_functions::RandomJsonPrettyPrint(jsonCustConvert);
-	std::cout << "Third Json To String Where The Struct Is Directly Cast To Json Using to_json Implementation:\n " << jsonStrthree << std::endl;
+	Log.Log("Third Json To String Where The Struct Is Directly Cast To Json Using to_json Implementation:\n " + jsonStrthree);
+	Log.Log("New Line\n");
 
 
 	std::cout << std::endl;

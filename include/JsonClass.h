@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #include "nlohmann/json.hpp"
 
 // https://github.com/nlohmann/json#examples

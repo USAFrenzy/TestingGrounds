@@ -1,0 +1,64 @@
+Generic Logger: ############## Plugin Functions ##############
+Generic Logger: Toggle Option To String: isPuddles
+Generic Logger: Toggle Option To String: isPuddleRunoff
+Generic Logger: Toggle Option To String: isPuddleFreeze
+Generic Logger: Toggle Option To String: IsPuddleSublimation
+Generic Logger: Toggle Option To String: isAridOptionEnabled
+Generic Logger: Toggle Option To String: isDryWells
+Generic Logger: Toggle Option To String: isFlammableWood
+Generic Logger: Toggle Option To String: isThirstIncreased
+Generic Logger: Toggle Option To String: isDebugEnabled
+Generic Logger: Toggle Option To String: isModEnabled
+Generic Logger: Toggle Option To String: isUndefined
+Generic Logger: ############## Json Functions ##############
+Generic Logger: First Json To String Explicitly Casting Values To Nodes:
+{
+  "Toggle Options": {
+    "isAridOptionEnabled": true,
+    "isDebugEnabled": false,
+    "isDryWells": false,
+    "isFlammableWood": true,
+    "isModEnabled": true,
+    "isPuddleFreeze": true,
+    "isPuddleRunoff": true,
+    "isPuddleSublimation": true,
+    "isPuddles": true,
+    "isThirstIncreased": true
+  }
+}
+Generic Logger: New Line
+
+Generic Logger: Second Json To String Casting Struct Values To Nodes:
+ {
+  "Toggle Options": {
+    "isAridOptionEnabled": true,
+    "isDebugEnabled": false,
+    "isDryWells": true,
+    "isFlammableWood": true,
+    "isModEnabled": true,
+    "isPuddleFreeze": true,
+    "isPuddleRunoff": true,
+    "isPuddleSublimation": true,
+    "isPuddles": true,
+    "isThirstIncreased": true
+  }
+}
+Generic Logger: New Line
+
+Generic Logger: Third Json To String Where The Struct Is Directly Cast To Json Using to_json Implementation:
+ {
+  "Toggle Options": {
+    "isAridOptionEnabled": true,
+    "isDebugEnabled": false,
+    "isDryWells": true,
+    "isFlammableWood": true,
+    "isModEnabled": true,
+    "isPuddleFreeze": true,
+    "isPuddleRunoff": true,
+    "isPuddleSublimation": true,
+    "isPuddles": true,
+    "isThirstIncreased": true
+  }
+}
+Generic Logger: New Line
+
