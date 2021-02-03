@@ -1,4 +1,5 @@
 Generic Logger: ############## Plugin Functions ##############
+
 Generic Logger: Toggle Option To String: isPuddles
 Generic Logger: Toggle Option To String: isPuddleRunoff
 Generic Logger: Toggle Option To String: isPuddleFreeze
@@ -10,7 +11,11 @@ Generic Logger: Toggle Option To String: isThirstIncreased
 Generic Logger: Toggle Option To String: isDebugEnabled
 Generic Logger: Toggle Option To String: isModEnabled
 Generic Logger: Toggle Option To String: isUndefined
+Generic Logger: ############## End Plugin Section ##############
+
+
 Generic Logger: ############## Json Functions ##############
+
 Generic Logger: First Json To String Explicitly Casting Values To Nodes:
 {
   "Toggle Options": {
@@ -26,7 +31,7 @@ Generic Logger: First Json To String Explicitly Casting Values To Nodes:
     "isThirstIncreased": true
   }
 }
-Generic Logger: New Line
+
 
 Generic Logger: Third Json To String Where The Struct Is Directly Cast To Json Using to_json Implementation:
  {
@@ -41,9 +46,6 @@ Generic Logger: Third Json To String Where The Struct Is Directly Cast To Json U
   "puddlesEnabled": true,
   "thirstEnabled": true
 }
-Generic Logger: New Line
-
-Generic Logger: 
 
 
 Generic Logger: Fourth Test Json Using The Json Macros To Define The to_json Implementation:
@@ -52,7 +54,6 @@ Generic Logger: Fourth Test Json Using The Json Macros To Define The to_json Imp
   "lineNumber": 0,
   "nodeValue": "Default Explicit Node Value"
 }
-Generic Logger: 
 
 
 Generic Logger: Testing Some Combined Functionality Using The Nested Json & Macro Defined to_json:
@@ -70,3 +71,5 @@ Generic Logger: Testing Some Combined Functionality Using The Nested Json & Macr
     "thirstEnabled": true
   }
 }
+
+
