@@ -1,14 +1,15 @@
 #include <iostream>
 
-#include "Plugin Utils.h"
-#include "JsonClass.h"
-
-
-#include "Logger.h"
+// Plugin Sand-boxing Files
+#include "Plugin/PluginUtils.h"
+// Json Sand-boxing Files
+#include "Json/JsonClass.h"
+// Logger Files (May Use To Sandbox)
+#include "Logger/Logger.h"
 
 
 // Simple Toggles For "Block Tests"
-#define PLUGIN_TEST 1
+#define PLUGIN_TEST 0
 #define JSON_TEST 1
 
 int main()
@@ -20,6 +21,8 @@ int main()
 	Log.Open();
 
 #if PLUGIN_TEST
+	// just for convenience
+	using namespace plugin_utils;
 
 	Log.Log("############## Plugin Functions ##############\n");
 	Toggles togOption;

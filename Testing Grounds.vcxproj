@@ -11,17 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\JsonClass.cpp" />
-    <ClCompile Include="src\Logger.cpp" />
+    <ClCompile Include="src\Json\JsonClass.cpp" />
+    <ClCompile Include="src\Logger\Logger.cpp" />
+    <ClCompile Include="src\Plugin\PluginUtils.cpp" />
     <ClCompile Include="src\Testing Grounds.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\JsonClass.h" />
-    <ClInclude Include="include\Logger.h" />
-    <ClInclude Include="include\PlatformHelper.h" />
-    <ClInclude Include="include\Plugin Utils.h" />
-    <ClInclude Include="include\SharedData.h" />
-    <ClInclude Include="include\Utilities.h" />
+    <ClInclude Include="include\Json\JsonClass.h" />
+    <ClInclude Include="include\Logger\Logger.h" />
+    <ClInclude Include="include\Logger\PlatformHelper.h" />
+    <ClInclude Include="include\Logger\SharedData.h" />
+    <ClInclude Include="include\Logger\Utilities.h" />
+    <ClInclude Include="include\Plugin\PluginUtils.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

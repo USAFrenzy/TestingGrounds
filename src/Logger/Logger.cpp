@@ -1,6 +1,6 @@
 
-#include "SharedData.h"
-#include "Logger.h"
+#include "Logger/SharedData.h"
+#include "Logger/Logger.h"
 
 #include <iostream>
 
