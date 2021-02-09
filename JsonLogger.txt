@@ -1,0 +1,58 @@
+Json Logger: ############## Json Functions ##############
+Json Logger: First Json To String Explicitly Casting Values To Nodes:
+{
+  "Toggle Options": {
+    "isAridOptionEnabled": true,
+    "isDebugEnabled": false,
+    "isDryWells": false,
+    "isFlammableWood": true,
+    "isModEnabled": true,
+    "isPuddleFreeze": true,
+    "isPuddleRunoff": true,
+    "isPuddleSublimation": true,
+    "isPuddles": true,
+    "isThirstIncreased": true
+  }
+}
+
+
+Json Logger: Third Json To String Where The Struct Is Directly Cast To Json Using to_json Implementation:
+ {
+  "aridOptionEnabled": true,
+  "debugEnabled": false,
+  "dryWellsEnabled": true,
+  "flammableWoodEnabled": true,
+  "modEnabled": true,
+  "puddleFreezeEnabled": true,
+  "puddleRunoffsEnabled": true,
+  "puddleSublimationEnabled": true,
+  "puddlesEnabled": true,
+  "thirstEnabled": true
+}
+
+
+Json Logger: Fourth Test Json Using The Json Macros To Define The to_json Implementation:
+{
+  "baseNodeTitle": "Default Explicit Node Base Name",
+  "lineNumber": 0,
+  "nodeValue": "Default Explicit Node Value"
+}
+
+
+Json Logger: Testing Some Combined Functionality Using The Nested Json & Macro Defined to_json:
+{
+  "Toggle Options": {
+    "aridOptionEnabled": true,
+    "debugEnabled": false,
+    "dryWellsEnabled": true,
+    "flammableWoodEnabled": true,
+    "modEnabled": true,
+    "puddleFreezeEnabled": true,
+    "puddleRunoffsEnabled": true,
+    "puddleSublimationEnabled": true,
+    "puddlesEnabled": true,
+    "thirstEnabled": true
+  }
+}
+
+

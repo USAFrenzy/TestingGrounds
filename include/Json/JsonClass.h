@@ -25,7 +25,7 @@ namespace json_struct {
 
 
 
-	struct JsonTestToggles
+	struct JsonTesttoggles
 	{
 		bool modEnabled = true;
 		bool debugEnabled = false;
@@ -40,7 +40,7 @@ namespace json_struct {
 
 	};
 	// Got Rid Of The More Controlled to_json Implementation For The Macro - Don't Believe I'd be doing anything more than serializing/deserializing	
-	NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(JsonTestToggles, modEnabled, debugEnabled, aridOptionEnabled, thirstEnabled,
+	NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(JsonTesttoggles, modEnabled, debugEnabled, aridOptionEnabled, thirstEnabled,
 		dryWellsEnabled, flammableWoodEnabled, puddlesEnabled, puddleRunoffsEnabled,
 		puddleFreezeEnabled, puddleSublimationEnabled)
 

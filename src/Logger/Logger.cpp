@@ -1,7 +1,6 @@
 
 #include "Logger/SharedData.h"
 #include "Logger/Logger.h"
-
 #include <iostream>
 
 namespace serenity {
@@ -15,10 +14,14 @@ namespace serenity {
 		SetLoggerOstream(m_ostream);
 	}
 
-	void Logger::Init(const std::string &fileName, const details::logger::LogOutput output)
+	void Logger::Init(const std::string &filePath, const std::string &fileName, const details::logger::LogOutput output)
 	{
+		// TODO: Actually Implement Directory Functionality In Here...
+		//const char* separator = "/";
+		m_filePath = filePath;
 		m_fileName = fileName;
 		m_output   = output;
+		//m_fullFileName = filePath + separator + fileName;
 	}
 
 	void Logger::Open( )

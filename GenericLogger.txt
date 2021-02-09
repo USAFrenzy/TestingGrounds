@@ -1,0 +1,9 @@
+Generic Logger: Running Sandbox Events
+Generic Logger: Running Plugin Sandbox Events
+Generic Logger: Finished Plugin Sandbox Events
+Generic Logger: Running Json Sandbox Events
+Generic Logger: Running Json to/from_json Sandbox Events
+
+Generic Logger: Finished Json to/from_json Sandbox Events
+Generic Logger: Finished Json Sandbox Events
+Generic Logger: Finished All Sandbox Events

@@ -1,0 +1,13 @@
+Plugin Logger: ############## Plugin Functions ##############
+
+Plugin Logger: Toggle Option To String: isPuddles
+Plugin Logger: Toggle Option To String: isPuddleRunoff
+Plugin Logger: Toggle Option To String: isPuddleFreeze
+Plugin Logger: Toggle Option To String: IsPuddleSublimation
+Plugin Logger: Toggle Option To String: isAridOptionEnabled
+Plugin Logger: Toggle Option To String: isDryWells
+Plugin Logger: Toggle Option To String: isFlammableWood
+Plugin Logger: Toggle Option To String: isThirstIncreased
+Plugin Logger: Toggle Option To String: isDebugEnabled
+Plugin Logger: Toggle Option To String: isModEnabled
+Plugin Logger: Toggle Option To String: isUndefined
