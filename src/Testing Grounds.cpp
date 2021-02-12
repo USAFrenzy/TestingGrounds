@@ -11,15 +11,21 @@
 // Simple toggles For "Block Tests"
 #define PLUGIN_TEST 1
 #define JSON_TEST 1
-// To/From Json Sandbox
-#define JSON_TO_FROM 1
+
+// Individual Plugin Sandbox Sections
+#define PLUGIN_HELPERS 1
+
+// Individual Json Sandbox Sections
+#define JSON_TO_FROM 1 // De/Serializing In JSON
+#define  JSON_PLUGIN 1 // Tying In Some Plugin Functions To De/Serialize In JSON
+
 
 int main()
 {
 
 	serenity::Logger genericLog("Generic Logger");
 	// separate Project altogether but yeah, that's way too wordy..Definitely Should Fix That Soon...
-	genericLog.Init("Logs","GenericLogger.txt", serenity::details::logger::LogOutput::all);
+	genericLog.Init("Logs", "GenericLogger.txt", serenity::details::logger::LogOutput::all);
 	genericLog.Open();
 	genericLog.Log("Running Sandbox Events");
 
@@ -29,11 +35,12 @@ int main()
 
 
 	serenity::Logger pluginLog("Plugin Logger");
-	pluginLog.Init("Logs","PluginLogger.txt", serenity::details::logger::LogOutput::all);
+	pluginLog.Init("Logs", "PluginLogger.txt", serenity::details::logger::LogOutput::all);
 	// just for convenience
 	using namespace options;
-
-	pluginLog.Log("############## Plugin Functions ##############\n");
+	pluginLog.Log("############## Plugin Section ##############\n\n");
+#if PLUGIN_HELPERS
+	pluginLog.Log("Plugin Helper Sandboxing:\n");
 	toggles togOption;
 	std::string togStr;
 	for (int i = 0; i <= static_cast<int>(toggles::isUndefined); i++) {
@@ -45,6 +52,7 @@ int main()
 	std::cout << std::endl;
 
 	genericLog.Log("Finished Plugin Sandbox Events");
+#endif PLUGIN_HELPERS
 
 #endif // PLUGIN_TEST
 
@@ -110,12 +118,24 @@ int main()
 
 #endif // JSON_TO_FROM
 
+#if JSON_PLUGIN // Json De/serializing of "plugin's" data
+	jsonLog.Log("Running Plugin Data De/Serializing To JSON Sandbox Events\n");
 
-	std::cout << std::endl;
+	// Write Some Sandbox, Tests, Etc here
+
+
+
+	jsonLog.Log("Finished Plugin Data De/Serializing To JSON Sandbox Events\n");
+#endif JSON_PLUGIN
+
+
 
 
 	genericLog.Log("Finished Json Sandbox Events");
 #endif // JSON_TEST
+
+
+
 
 
 

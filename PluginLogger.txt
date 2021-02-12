@@ -1,4 +1,7 @@
-Plugin Logger: ############## Plugin Functions ##############
+Plugin Logger: ############## Plugin Section ##############
+
+
+Plugin Logger: Plugin Helper Sandboxing:
 
 Plugin Logger: Toggle Option To String: isPuddles
 Plugin Logger: Toggle Option To String: isPuddleRunoff
